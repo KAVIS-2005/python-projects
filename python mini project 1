@@ -1,0 +1,65 @@
+def foodorder ():
+    print("1.Food menu")
+    print("2.dosa")
+    print("3.Idli")
+    print("4.poori")
+    print("5.chapathi")
+    choice=int(input("Enter your choice:"))
+    if choice== 2:
+        food="Dosa"
+        price=30
+        quantity=int(input("Enter your quantity :"))
+        print(quantity*price)
+    elif choice== 3:
+        food="Idli"
+        price=30
+        quantity=int(input("Enter your quantity :"))
+        print(quantity*price)
+    elif choice== 4:
+        food="poori"
+        price=30
+        quantity=int(input("Enter your quantity :"))
+        print(quantity*price)
+    elif choice== 5:
+        food="chapathi"
+        price=30
+        quantity=int(input("Enter your quantity :"))
+        print(quantity*price)
+
+
+def calculator():
+    print("1.Addition")
+    print("2.Subtraction")
+    print("3.Multiplication")
+    print("4.Division")
+
+    choice=int(input("choose operation (1-4):"))
+    a=int(input("Enter ur 1st value:"))
+    b=int(input("Enter ur 2nd value:"))
+
+    if choice==1:
+        print(a+b)
+    elif choice==2:
+        print(a-b)
+    elif choice==3:
+        print(a*b)
+    elif choice==4:
+        print(a/b)
+
+while True:
+    print("1.foodorder")
+    print("2.calculator")
+    print("3.Exit")
+    choice=int(input("Enter ur choice:"))
+    if choice==1:
+        foodorder()
+    elif choice==2:
+        calculator()
+    elif choice==3:
+        print("Thank you")
+        break
+    else:
+        print("Please Enter valid choice")
+
+
+

@@ -1,0 +1,135 @@
+def studentdetails():
+    std_name=input("Enter your name:")
+    roll_no=int(input("Enter your roll no:"))
+    return std_name,roll_no
+student_name,roll_number=studentdetails()
+
+print("Student Name:",student_name)
+print("Roll Number:",roll_number)
+
+
+def studentmarks():
+    marks=[]
+    for i in range(3):
+        mark=int(input("Enter you subject mark:"))
+        marks.append(mark)
+    return marks
+student_marks=studentmarks()
+print(student_marks)
+
+
+    
+    
+def calculation_result(marks):
+    total=0
+    for mark in marks:
+        total=total+mark
+    average=total/3
+    return total,average
+totalmarks,averagemarks=calculation_result(student_marks)
+print(totalmarks)
+print(averagemarks)
+
+def check_grade(marks, average):
+    passed = True
+
+    for mark in marks:
+        if mark < 50:
+            passed = False
+
+    if passed == False:
+        grade = "F"
+        result = "Fail"
+
+    elif average >= 90:
+        grade = "A+"
+        result = "Pass"
+
+    elif average >= 80:
+        grade = "A"
+        result = "Pass"
+
+    elif average >= 70:
+        grade = "B"
+        result = "Pass"
+
+    elif average >= 60:
+        grade = "C"
+        result = "Pass"
+
+    elif average >= 50:
+        grade = "D"
+        result = "Pass"
+
+    else:
+        grade = "F"
+        result = "Fail"
+
+    return grade, result
+grade, result = check_grade(student_marks, averagemarks)
+
+print("Grade:", grade)
+print("Result:", result)
+
+def display_report():
+    print("=======STUDENT REPORT CARD==========")
+    print("Name:", student_name)
+    print("Roll No:", roll_number)
+    print("Marks:", student_marks)
+    print("Total:", totalmarks)
+    print("Average:", round(averagemarks,2))
+    print("Grade:", grade)
+    print("Result:", result)
+display_report()
+
+
+while True:
+    print("\n===== STUDENT ANALYZER =====")
+    print("1. Student Details")
+    print("2. Student Marks")
+    print("3. Calculate Total and Average")
+    print("4. Check Grade")
+    print("5. Display Report Card")
+    print("6. Exit")
+
+    choice = int(input("Enter your choice:"))
+
+    if choice == 1:
+        student_name, roll_number = studentdetails()
+
+    elif choice == 2:
+        student_marks = studentmarks()
+
+    elif choice == 3:
+        if len(student_marks) == 3:
+            totalmarks, averagemarks = calculation_result(student_marks)
+            print("Total Marks:", totalmarks)
+            print("Average:", averagemarks)
+        else:
+            print("Please enter student marks first!")
+
+    elif choice == 4:
+        if len(student_marks) == 3:
+            totalmarks, averagemarks = calculation_result(student_marks)
+            grade, result = check_grade(student_marks, averagemarks)
+            print("Grade:", grade)
+            print("Result:", result)
+        else:
+            print("Please enter student marks first!")
+
+    elif choice == 5:
+        if student_name != "" and len(student_marks) == 3:
+            totalmarks, averagemarks = calculation_result(student_marks)
+            grade, result = check_grade(student_marks, averagemarks)
+            display_report(student_name, roll_number, student_marks,
+                           totalmarks, averagemarks, grade, result)
+        else:
+            print("Please enter student details and marks first!")
+
+    elif choice == 6:
+        print("Thank you!")
+        break
+
+    else:
+        print("Invalid choice!")
+

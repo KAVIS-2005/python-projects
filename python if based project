@@ -1,0 +1,147 @@
+age=int(input("Enter your age:"))
+if age>=18:
+    print("Eligible to vote")
+
+if age>=18:
+    print("Eligible")
+else:
+    print("Not eligible")
+    
+a=7
+if a%2==0:
+    print("Even")
+else:
+    print("odd")
+a=0
+if a>0:
+    print("positive")
+elif a<0:
+    print("negative")
+else:
+    print("neither positive nor negative")
+while True:
+    
+    marks=int(input("Enter your marks"))
+    if marks>=90:
+        print("grade A")
+    elif marks>=80:
+        print("grade B")
+    elif marks>=60:
+        print("grade C")
+    elif marks>=50:
+        print("grade D")
+    else:
+        print("No grade")
+    
+
+age=20
+hallticket="yes"
+
+if age>=18:
+    if hallticket=="yes":
+        print("Allowed")
+    else:
+        print("Not Allowed")
+else:
+    print("Next time")
+
+x=True
+if not x:
+    print("hello")
+else:
+    print("Welcome")
+
+
+'''
+balance=int(input("Enter your balance:"))
+withdraw=int(input("Enter your withdraw amount:"))
+
+if withdraw>0 and withdraw %100==0:
+    if withdraw<=balance:
+        remaining_balance=balance-withdraw
+        print("yeah here is ur amount:",withdraw)
+        print("Your remaining balnce:",remaining_balance)
+            
+    else:
+        print("Insufficient balance")
+        
+else:
+    print("invalid amount or invalid multiple")
+
+if withdraw<=0:
+    print("Invalid amount")
+elif withdraw %100 !=0:
+    print("Enter multiples of 100")
+elif withdraw > balance:
+    print("Insufficient balance")
+else:
+    remain=balance-withdraw
+    print("Your remaining balance:",remain)
+    print("Withdrawal succesful")
+'''
+
+name=input("Enter Your name:")
+m1=int(input("Enter your mark1:"))
+m2=int(input("Enter your mark2:"))
+m3=int(input("Enter your mark3:"))
+
+if m1<0 or m1>100 or m2<0 or m2>100 or m3<0 or m3>100:
+    print("Invalid marks")
+else:
+    total=m1+m2+m3
+    avg=total/3
+    if m1<35 or m2<35 or m3<35:
+        print("you are failed")
+    elif avg>=90:
+        print("Grade A")
+    elif avg>=80:
+        print("Grade B")
+    elif avg>=65:
+        print("Grade C")
+    else:
+        print("Grade D")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    

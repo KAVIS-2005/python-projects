@@ -1,0 +1,78 @@
+
+def accountdetails():
+    name = input("Enter your name:")
+    acc_no = int(input("Enter account number:"))
+    balance = 10000
+    return name, acc_no, balance
+
+customer_name, account_number, balance = accountdetails()
+
+
+def deposit(amount, balance):
+    balance = balance + amount
+    return balance
+
+
+def withdraw(amount, balance):
+    if amount <= 0:
+        print("Enter a valid amount!")
+
+    elif amount <= balance:
+        balance = balance - amount
+        print("Withdrawal Successful!")
+
+    else:
+        print("Insufficient Balance!")
+
+    return balance
+
+
+def checkbalance(balance):
+    print("Available Balance:", balance)
+
+
+def displaydetails():
+    print("======= ATM RECEIPT =======")
+    print("Customer Name:", customer_name)
+    print("Account Number:", account_number)
+    print("Available Balance:", balance)
+
+
+while True:
+
+    print("\n===== ATM MACHINE =====")
+    print("1. Account Details")
+    print("2. Deposit Money")
+    print("3. Withdraw Money")
+    print("4. Check Balance")
+    print("5. Display Account Details")
+    print("6. Exit")
+
+    choice = int(input("Enter your choice:"))
+
+    if choice == 1:
+        customer_name, account_number, balance = accountdetails()
+
+    elif choice == 2:
+        amount = int(input("Enter deposit amount:"))
+        balance = deposit(amount, balance)
+        print("Deposit Successful!")
+        print("Current Balance:", balance)
+
+    elif choice == 3:
+        amount = int(input("Enter withdrawal amount:"))
+        balance = withdraw(amount, balance)
+        print("Current Balance:", balance)
+
+    elif choice == 4:
+        checkbalance(balance)
+
+    elif choice == 5:
+        displaydetails()
+
+    elif choice == 6:
+        print("Thank you for using ATM!")
+        break
+
+    else:
+        print("Invalid Choice!")
